@@ -8,6 +8,7 @@ import {AppComponent} from './app.component';
 import {ThemeModule} from './theme/theme.module';
 import {ShellModule} from './shell/shell.module';
 import '../assets/styles.scss';
+import '../favicon.ico';
 
 // Export Angular 6 feature module
 @NgModule({

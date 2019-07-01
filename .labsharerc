@@ -3,5 +3,11 @@
         "main": "ui/main",
         "polyfills": "ui/polyfills",
         "index": "ui/index.ejs"
+    },
+    "serve":{
+            listen: {
+            port: 8000
+        },
+        hotClient: true
     }
 }

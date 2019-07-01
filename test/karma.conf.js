@@ -81,6 +81,11 @@ module.exports = function(config) {
             exclude: '/node_modules',
           },
           {
+            test: /\.ts$/,
+            loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+            exclude: [/\.e2e\.ts$/],
+          },
+          {
             test: /ui\/.+(\.ts|\.js)$/,
             exclude: /(node_modules|spec\.ts$|spec.js$)/,
             loader: 'istanbul-instrumenter-loader',
@@ -92,6 +97,10 @@ module.exports = function(config) {
           {
             test: /\.html$/,
             use: ['html-loader'],
+          },
+          {
+            test: /\.(scss|sass)$/,
+            use: ['to-string-loader', 'css-loader', 'sass-loader'],
           },
           {
             test: /\.css$/,
