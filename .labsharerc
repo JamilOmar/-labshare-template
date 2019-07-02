@@ -5,9 +5,10 @@
         "index": "ui/index.ejs"
     },
     "serve":{
-            listen: {
-            port: 8000
-        },
-        hotClient: true
+        open: true,
+        hot: true,
+        port: 8080,
+        historyApiFallback: true,
+        stats: 'minimal'
     }
 }
