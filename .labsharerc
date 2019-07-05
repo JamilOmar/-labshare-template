@@ -1,7 +1,10 @@
 {
+    "tsConfig" : "tsconfig.json",
     "build": {
         "main": "ui/main",
         "polyfills": "ui/polyfills",
+        "assets": "ui/assets",
+        "app": "ui/app",
         "index": "ui/index.ejs"
     },
     "serve":{

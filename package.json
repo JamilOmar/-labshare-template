@@ -55,12 +55,14 @@
   "devDependencies": {
     "@angular/compiler": "^6.0.4",
     "@angular/compiler-cli": "^6.0.4",
+    "angular-router-loader": "~0.8",
     "@angular/platform-browser": "^6.0.4",
     "@angular/platform-browser-dynamic": "^6.0.4",
     "@commitlint/cli": "^6.2.0",
     "@commitlint/config-conventional": "^6.1.3",
     "@labshare/semantic-release-config": "^1.0.0",
     "@labshare/shell-ui": "^1.0.0",
+    "@ngtools/webpack": "^6.2.9",
     "@types/jasmine": "^2.5.54",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^5.2.1",
@@ -83,7 +85,10 @@
     "prettier": "^1.18.2",
     "semantic-release": "^15.5.0",
     "tslint-angular": "^1.1.2",
-    "typescript": "^2.7.2",
-    "webpack": "4.24.0"
+    "typescript": "~3.4",
+    "webpack": "4.25.1",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-hot-middleware": "^2.21.1",
+    "webpack-merge": "^4.2.1"
   }
 }
