@@ -6,13 +6,10 @@ import {
   Input,
   forwardRef,
   ChangeDetectorRef,
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy
 } from '@angular/core';
-import {
-  StatefulComponent,
-  StatefulParent,
-  StatefulService,
-} from '@labshare/ngx-stateful';
+import {StatefulComponent, StatefulParent, StatefulService} from '@labshare/ngx-stateful';
+import {Router} from '@angular/router';
 
 export const STATE = () => ({
   selectedItem: `LABSHARE_ON_SELECTED`,
@@ -20,25 +17,15 @@ export const STATE = () => ({
     {
       name: 'First leftmost item',
       id: 'first-item',
-      icon: 'http://placekitten.com/50/50',
+      icon: 'http://placekitten.com/50/50'
     },
     {
       name: 'Second leftmost item',
       id: 'second-item',
-      icon: 'http://placekitten.com/80/80',
-    },
+      icon: 'http://placekitten.com/80/80'
+    }
   ],
-  items: [
-    {name: 'Dashboard', link: 'tenant.landing', icon: 'th'},
-    {name: 'Tenant', link: 'tenant.details', icon: 'th-large'},
-    {name: 'Apps', link: 'tenant.apps', icon: 'rocket'},
-    {name: 'Providers', link: 'tenant.providers', icon: 'sliders'},
-    {name: 'APIs', link: 'tenant.api', icon: 'puzzle-piece'},
-    {name: 'Users', link: 'tenant.users', icon: 'user'},
-    {name: 'User Groups', link: 'tenant.user-groups', icon: 'users'},
-    {name: 'Roles', link: 'tenant.roles', icon: 'warning'},
-    {name: 'Permissions', link: 'tenant.permissions', icon: 'warning'},
-  ],
+  items: [{name: 'home', link: 'home', icon: 'th'}, {name: 'version', link: 'version', icon: 'th-large'}]
 });
 
 export const UTILS = {};
@@ -53,9 +40,9 @@ export const PROPS = {};
   providers: [
     {
       provide: StatefulParent,
-      useExisting: forwardRef(() => ThemeComponent),
-    },
-  ],
+      useExisting: forwardRef(() => ThemeComponent)
+    }
+  ]
 })
 export class ThemeComponent extends StatefulComponent {
   updateProps = {};
@@ -65,7 +52,21 @@ export class ThemeComponent extends StatefulComponent {
     @Optional() @SkipSelf() public statefulParent: StatefulParent,
     public statefulService: StatefulService,
     public appRef: ApplicationRef,
+    private router: Router
   ) {
     super(inj, STATE, statefulParent, statefulService, appRef);
+  }
+
+  public changeItem(selected) {
+    switch (selected.link) {
+      case 'home':
+        this.router.navigate(['']);
+        break;
+      case 'version':
+        this.router.navigate(['version']);
+        break;
+    }
+
+    console.log(selected);
   }
 }

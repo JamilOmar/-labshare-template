@@ -4,12 +4,14 @@ import {AuthService} from '@labshare/ngx-core-services';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private auth: AuthService) {}
+  constructor(private authService: AuthService) {}
   title = 'newapp';
   ngOnInit(): void {
-    this.auth.configure().toPromise();
+    this.authService.configure().subscribe(done => {
+      this.authService.onAuthCallback();
+    });
   }
 }

@@ -1,4 +1,9 @@
 {
-    "test-config":"Hello from config"
+    "test-config":"Hello from config",
+    "auth": {
+        "url": "http://localhost:7000/_api",
+        "clientId": "83915f29-b69d-4436-b9e8-2ec5c4198543",
+        "tenant": "ls"
+    }
   
 }

@@ -6,6 +6,6 @@ import {AppRoutingModule} from '../app-routing.module';
 @NgModule({
   imports: [CommonModule, AppRoutingModule, FormsModule],
   declarations: [HomeComponent],
-  exports: [AppRoutingModule, HomeComponent],
+  exports: [AppRoutingModule, HomeComponent]
 })
 export class CoreModule {}

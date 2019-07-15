@@ -15,16 +15,8 @@ import '../favicon.ico';
   declarations: [AppComponent],
   entryComponents: [],
   exports: [],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    CommonModule,
-    ShellModule,
-    CoreModule,
-    ThemeModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, HttpClientModule, CommonModule, ShellModule, CoreModule, ThemeModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class NewappModule {}

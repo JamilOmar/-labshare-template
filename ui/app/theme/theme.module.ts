@@ -8,6 +8,6 @@ import {RouterModule} from '@angular/router';
   imports: [CommonModule, TopNavModule, LeftNavModule, RouterModule],
   providers: [],
   declarations: [ThemeComponent],
-  exports: [ThemeComponent],
+  exports: [ThemeComponent]
 })
 export class ThemeModule {}

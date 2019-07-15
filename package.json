@@ -43,7 +43,7 @@
     "@angular/router": "^6.1.10",
     "@labshare/ngx-core-services": "^1.0.0",
     "@labshare/ngx-stateful": "^2.0.9",
-    "@labshare/stateful-components": "^1.13.1",
+    "@labshare/stateful-components": "^2.0.1",
     "acorn": "^6.2.0",
     "core-js": "^3.0.1",
     "lodash": "^4.6.1",

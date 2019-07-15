@@ -11,12 +11,12 @@ module.exports = function(config) {
     customLaunchers: {
       Chrome_travis_ci: {
         base: 'Chrome',
-        flags: ['--no-sandbox', '--remote-debugging-port=9999'],
+        flags: ['--no-sandbox', '--remote-debugging-port=9999']
       },
       ChromeDebugging: {
         base: 'Chrome',
-        flags: ['--remote-debugging-port=9333'],
-      },
+        flags: ['--remote-debugging-port=9333']
+      }
     },
     reporters: ['progress', 'coverage-istanbul'],
     coverageIstanbulReporter: {
@@ -36,13 +36,13 @@ module.exports = function(config) {
       // stop istanbul outputting messages like `File [${filename}] ignored, nothing could be mapped`
       skipFilesWithNoCoverage: false,
 
-      verbose: false, // output config used by istanbul for debugging
+      verbose: false // output config used by istanbul for debugging
     },
     preprocessors: {
-      'test/test-index.ts': ['webpack'],
+      'test/test-index.ts': ['webpack']
     },
     webpackMiddleware: {
-      stats: 'errors-only',
+      stats: 'errors-only'
     },
     exclude: [],
     port: 9999,
@@ -51,13 +51,13 @@ module.exports = function(config) {
     browserConsoleLogOptions: {
       level: 'log',
       format: '%b %T: %m',
-      terminal: true,
+      terminal: true
     },
     // Workaround for test timeout issue: https://github.com/jasmine/jasmine/issues/1327#issuecomment-332939551
     browserNoActivityTimeout: 150000,
     mime: {
       // Chrome version 55+ has a bug with TS. See: https://stackoverflow.com/a/41054760
-      'text/x-typescript': ['ts', 'tsx'],
+      'text/x-typescript': ['ts', 'tsx']
     },
     colors: true,
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
@@ -66,7 +66,7 @@ module.exports = function(config) {
       mode: 'development',
       resolve: {
         // Add '.ts' and '.tsx' as a resolvable extension.
-        extensions: ['.ts', '.tsx', '.js'],
+        extensions: ['.ts', '.tsx', '.js']
       },
       module: {
         rules: [
@@ -75,15 +75,15 @@ module.exports = function(config) {
             use: {
               loader: 'ts-loader',
               options: {
-                transpileOnly: true, // IMPORTANT! use transpileOnly mode to speed-up compilation
-              },
+                transpileOnly: true // IMPORTANT! use transpileOnly mode to speed-up compilation
+              }
             },
-            exclude: '/node_modules',
+            exclude: '/node_modules'
           },
           {
             test: /\.ts$/,
             loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
-            exclude: [/\.e2e\.ts$/],
+            exclude: [/\.e2e\.ts$/]
           },
           {
             test: /ui\/.+(\.ts|\.js)$/,
@@ -91,35 +91,35 @@ module.exports = function(config) {
             loader: 'istanbul-instrumenter-loader',
             enforce: 'post',
             options: {
-              esModules: true,
-            },
+              esModules: true
+            }
           },
           {
             test: /\.html$/,
-            use: ['html-loader'],
+            use: ['html-loader']
           },
           {
             test: /\.(scss|sass)$/,
-            use: ['to-string-loader', 'css-loader', 'sass-loader'],
+            use: ['to-string-loader', 'css-loader', 'sass-loader']
           },
           {
             test: /\.css$/,
-            use: ['null-loader'],
+            use: ['null-loader']
           },
           {
             test: /\.scss$/,
-            use: ['null-loader'],
+            use: ['null-loader']
           },
           {
             test: /\.(jpe|jpg|png|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
-            loader: 'null-loader',
-          },
-        ],
+            loader: 'null-loader'
+          }
+        ]
       },
       plugins: [new ForkTsCheckerWebpackPlugin()],
       cache: true,
-      devtool: 'inline-source-map',
-    },
+      devtool: 'inline-source-map'
+    }
   };
 
   if (process.env.TRAVIS) {

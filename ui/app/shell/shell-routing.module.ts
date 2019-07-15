@@ -7,10 +7,10 @@ import {VersionComponent} from './version/version.component';
 const shellRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
-  {path: 'version', component: VersionComponent},
+  {path: 'version', component: VersionComponent}
 ];
 @NgModule({
   imports: [RouterModule.forChild(shellRoutes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ShellRoutingModule {}

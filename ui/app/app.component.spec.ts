@@ -10,7 +10,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [ThemeModule, AppRoutingModule],
       declarations: [AppComponent, HomeComponent],
-      providers: [AuthService, {provide: APP_BASE_HREF, useValue: '/'}],
+      providers: [AuthService, {provide: APP_BASE_HREF, useValue: '/'}]
     }).compileComponents();
   }));
 
